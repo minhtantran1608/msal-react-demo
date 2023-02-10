@@ -15,8 +15,9 @@ import { callMsGraph } from "../utils/MsGraphApiCall";
 import Paper from "@mui/material/Paper";
 
 const ProfileContent = () => {
-    const { instance, inProgress } = useMsal();
+    const { instance, accounts, inProgress } = useMsal();
     const [graphData, setGraphData] = useState(null);
+    console.log(accounts)
 
     useEffect(() => {
         if (!graphData && inProgress === InteractionStatus.None) {
